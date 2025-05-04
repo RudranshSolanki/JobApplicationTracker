@@ -5,7 +5,10 @@ import cors from 'cors'
 
 const server = express();
 server.use(express.json());
-server.use(cors())
+server.use(cors({
+    origin: 'https://jobapplicationtrackerfe.onrender.com',
+    credentials: true // if you're using cookies or sessions
+}))
 
 server.use('/',router);
 
