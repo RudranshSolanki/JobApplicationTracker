@@ -7,7 +7,7 @@ export class JobController{
     async addJob(req,res){
         console.log(req.body)
         const {company,date} = req.body;
-        await this.jobRepo.addJob({company,date});
+        await this.jobRepo.addJob({company,data:date});
         res.status(201).send('job added');
     }
 
